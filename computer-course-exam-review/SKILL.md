@@ -5,7 +5,7 @@ description: Analyze user-provided past exams, review outlines, notes, and cours
 
 # Computer Course Exam Review
 
-帮助学生使用自己提供的课程资料进行期末复习。资料只作为当前会话输入，不应被复制到公开仓库、提交到 Git、或用于推断个人身份。
+帮助学生使用自己提供的课程资料进行期末复习。资料只作为当前会话输入，不应被复制到公开仓库、提交到 Git、或用于推断个人身份。处理资料时优先保护隐私，个人信息不参与复习内容生成。
 
 ## Core Workflow
 
@@ -29,6 +29,9 @@ description: Analyze user-provided past exams, review outlines, notes, and cours
 ## Input Handling
 
 - Accept pasted text or user-uploaded PDFs, Word files, slides, images, and tables when the environment supports them.
+- 在分析前先识别并隔离个人信息，包括姓名、学号、工号、班级中的个人标识、手机号、邮箱、身份证件信息、住址、账号、令牌、密码、二维码、签名、头像，以及文件名或路径中携带的身份信息。
+- 个人信息只做脱敏处理，不复述、不总结、不用于推断身份；需要保留位置关系时使用 `[已脱敏]`，无法安全隔离时跳过对应片段。
+- 输出标题、示例、引用、练习题和文件清单不得包含个人信息、原始文件名、绝对路径或可反推出个人身份的组合信息。
 - Prefer the user's stated course scope and emphasis over generic exam predictions.
 - For scanned or low-quality material, state which parts could not be read reliably.
 - Do not invent page numbers, question numbers, teacher preferences, exam dates, or grading weights.
@@ -47,9 +50,11 @@ description: Analyze user-provided past exams, review outlines, notes, and cours
 ## Privacy and Publication Boundary
 
 - The public repository contains only this Skill, generic templates, and documentation.
+- 公开仓库中的示例、测试和文档必须使用虚构且不可识别的占位内容，不得复制用户资料中的姓名、学号、联系方式、文件名或截图。
 - Never add original exam papers, teacher handouts, screenshots, course recordings, answer keys, datasets, or extracted text from private materials.
 - Before any Git operation, inspect the repository contents and stop if a likely private or copyrighted source file is present.
 - Do not request or store GitHub tokens in the Skill or its documentation.
+- 若用户要求发布资料，先拒绝发布原始内容，改为提供脱敏后的通用结构、知识点标签或不含原文的抽象总结。
 
 ## Course Coverage
 
@@ -81,7 +86,7 @@ Use the taxonomy reference for computer-science core courses. For a new course, 
 1. [题目]
 
 ## 五、答案与解析
-1. [答案]；关键步骤：[...] 
+1. [答案]；关键步骤：[...]
 
 ## 六、考前核对
 - [需要向课程大纲或教师资料确认的事项]
