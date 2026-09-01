@@ -1,0 +1,28 @@
+# Local source materials must never enter the public repository.
+materials/
+source-materials/
+uploads/
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+*.zip
+*.7z
+*.rar
+*.mp4
+*.pka
+*.pkt
+*.csv
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Local tooling and secrets
+.env
+.venv/
+node_modules/
+__pycache__/
